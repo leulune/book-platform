@@ -4,7 +4,7 @@ import { PDFDocument, rgb, StandardFonts } from "pdf-lib";
 
 export async function GET(
     req: NextRequest,
-    context: { params: { id: string } }
+    context: any
 ) {
     const { id } = context.params;
 
