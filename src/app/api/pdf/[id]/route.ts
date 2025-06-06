@@ -4,9 +4,9 @@ import { PDFDocument, rgb, StandardFonts } from "pdf-lib";
 
 export async function GET(
     req: NextRequest,
-    { params }: { params: { id: string } }
+    context: { params: { id: string } }
 ) {
-    const { id } = params;
+    const { id } = context.params;
 
     const { data, error } = await supabase
         .from("dance_halls")
