@@ -6,7 +6,7 @@ export async function GET(
     req: Request,
     context: { params: { id: string } }
 ) {
-    const { id } = await Promise.resolve(context.params);
+    const { id } = context.params;
 
     const { data, error } = await supabase
         .from("dance_halls")
