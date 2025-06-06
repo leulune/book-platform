@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+      - NEXT_PUBLIC_SUPABASE_URL=https://eiomasnpeynnqkapflko.supabase.co
+      - NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVpb21hc25wZXlubnFrYXBmbGtvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDg2MDI2NTksImV4cCI6MjA2NDE3ODY1OX0.Q0oooyaWwytWp76m-4InxxqNpeEOo1fJLS7LXLRW-_k
