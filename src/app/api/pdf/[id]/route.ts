@@ -4,6 +4,7 @@ import { PDFDocument, rgb, StandardFonts } from "pdf-lib";
 
 export async function GET(
     req: NextRequest,
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     context: Record<string, any>
 ) {
     const { id } = context.params;
