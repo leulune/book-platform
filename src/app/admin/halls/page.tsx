@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { supabase } from '@/lib/supabase';
+import Image from "next/image";
 
 interface DanceHall {
   id: string;
@@ -85,9 +86,11 @@ export default function AdminHallsPage() {
             className="border rounded p-4 shadow-sm bg-white"
           >
             {hall.image_url && (
-              <img
+              <Image
                 src={hall.image_url}
                 alt={hall.name}
+                width={800}
+                height={300}
                 className="w-full h-48 object-cover rounded mb-4"
               />
             )}

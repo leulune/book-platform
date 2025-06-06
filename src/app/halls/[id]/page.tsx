@@ -1,5 +1,6 @@
 import { supabase } from "@/lib/supabase";
 import { notFound } from "next/navigation";
+import Image from "next/image";
 
 interface HallDetailPageProps {
     params: { id: string };
@@ -22,9 +23,11 @@ export default async function HallDetailPage({ params }: HallDetailPageProps) {
         <div className="max-w-2xl mx-auto mt-10">
             <h1 className="text-3xl font-bold mb-4">{hall.name}</h1>
             {hall.image_url && (
-                <img
+                <Image
                     src={hall.image_url}
                     alt={hall.name}
+                    width={800}
+                    height={400}
                     className="w-full h-64 object-cover mb-4 rounded"
                 />
             )}

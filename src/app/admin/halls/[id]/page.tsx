@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'next/navigation';
 import { supabase } from '@/lib/supabase';
+import Image from "next/image";
 
 interface Hall {
   id: string;
@@ -46,9 +47,11 @@ export default function HallDetailPage() {
     <div className="max-w-2xl mx-auto mt-10">
       <h1 className="text-3xl font-bold mb-4">{hall.name}</h1>
       {hall.image_url && (
-        <img
+        <Image
           src={hall.image_url}
           alt={hall.name}
+          width={800}
+          height={400}
           className="w-full h-64 object-cover mb-4 rounded"
         />
       )}

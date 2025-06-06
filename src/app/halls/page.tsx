@@ -1,5 +1,6 @@
 import { supabase } from "@/lib/supabase";
 import Link from "next/link";
+import Image from 'next/image';
 
 export default async function HallsPage() {
     const { data: halls, error } = await supabase.from('dance_halls').select('*');
@@ -19,11 +20,14 @@ export default async function HallsPage() {
                 {halls.map((hall) => (
                     <div key={hall.id} className="border rounded p-4 shadow">
                         {hall.image_url && (
-                            <img
+                            <Image
                                 src={hall.image_url}
                                 alt={hall.name}
+                                width={800}
+                                height={300}
                                 className="w-full h-48 object-cover mb-4 rounded"
                             />
+
                         )}
                         <h2 className="text-xl font-semibold mb-2">{hall.name}</h2>
                         <p><strong>Адрес:</strong> {hall.address}</p>
