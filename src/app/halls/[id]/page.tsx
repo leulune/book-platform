@@ -1,6 +1,7 @@
 import { supabase } from "@/lib/supabase";
 import { notFound } from "next/navigation";
 import Image from "next/image";
+import { PageProps } from "../../../../.next/types/app/layout";
 
 interface HallDetailPageProps {
     params: { id: string };
