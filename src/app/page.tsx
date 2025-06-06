@@ -2,12 +2,11 @@
 
 import { useEffect, useState } from 'react';
 import { supabase } from '@/lib/supabase';
-import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 
 export default function Home() {
   const [user, setUser] = useState<any>(null);
   const [loading, setLoading] = useState(true);
-  const router = useRouter();
 
   useEffect(() => {
     const getUser = async () => {
@@ -32,18 +31,18 @@ export default function Home() {
 
         {!user ? (
           <div className="flex justify-center gap-4">
-            <a
+            <Link
               href="/auth/register"
               className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
             >
               Регистрация
-            </a>
-            <a
+            </Link>
+            <Link
               href="/auth/login"
               className="px-6 py-2 border border-blue-600 text-blue-600 rounded-lg hover:bg-blue-100 transition"
             >
               Вход
-            </a>
+            </Link>
           </div>
         ) : (
           <div className="space-y-6">
@@ -51,18 +50,18 @@ export default function Home() {
               Вы вошли как: <span className="underline underline-offset-2">{user.email}</span>
             </p>
             <div className="flex justify-center gap-4">
-              <a
+              <Link
                 href="/admin/halls"
                 className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
               >
                 Мои залы
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/halls"
                 className="px-6 py-2 border border-blue-600 text-blue-600 rounded-lg hover:bg-blue-100 transition"
               >
                 Каталог
-              </a>
+              </Link>
             </div>
           </div>
         )}

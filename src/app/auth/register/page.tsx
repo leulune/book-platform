@@ -23,7 +23,7 @@ export default function RegisterPage() {
         resolver: zodResolver(schema),
     })
 
-    const onSubmit = async (data: any) => {
+    const onSubmit = async (data: z.infer<typeof schema>) => {
         const { email, password } = data
         const { error: signUpError } = await supabase.auth.signUp({
             email,
