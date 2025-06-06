@@ -61,6 +61,7 @@ npm run dev
 ## 📸 Демо
 
 Запустить `localhost:3000`
+Vercel: book-platform-1p4g.vercel.app
 
 ## 🛑 Примечания
 
