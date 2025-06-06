@@ -1,12 +1,18 @@
 import { supabase } from "@/lib/supabase/server";
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { PDFDocument, rgb, StandardFonts } from "pdf-lib";
 
+type Params = {
+    params: {
+        id: string;
+    };
+};
+
 export async function GET(
-    req: Request,
-    context: { params: { id: string } }
+    req: NextRequest,
+    { params }: Params
 ) {
-    const { id } = context.params;
+    const { id } = params;
 
     const { data, error } = await supabase
         .from("dance_halls")
